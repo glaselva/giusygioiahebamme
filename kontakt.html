@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Giusy & Gioia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+
+    <!-- NAVBAR TEDESCA -->
+    <nav class="navbar">
+        <div class="logo">Giusy <span>&</span> Gioia</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="#">Leistungen</a></li>
+            <li><a href="#">Kurse</a></li>
+            <li><a href="#">Über Uns</a></li>
+            <li><a href="kontakt.html" class="active" style="color:var(--col-bronze)">Kontakt</a></li>
+            <li class="lang-switch desktop-only">
+                <span class="lang-btn active">DE</span>
+                <a href="contatti.html" class="lang-btn">IT</a>
+                <a href="contact.html" class="lang-btn">EN</a>
+            </li>
+        </ul>
+        <div class="mobile-controls">
+            <div class="lang-switch-mobile">
+                <span class="active">DE</span>
+                <a href="contatti.html">IT</a>
+                <a href="contact.html">EN</a>
+            </div>
+            <div class="burger"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div>
+        </div>
+    </nav>
+
+    <!-- CONTENUTO PAGINA -->
+    <div class="container" style="padding-top:120px;"> <!-- Padding per non finire sotto la navbar fissa -->
+        
+        <header class="page-header">
+            <h1>Lass uns sprechen</h1>
+            <p>Fülle das Formular aus, um ein Vorgespräch zu vereinbaren. <br>Bitte prüfe zuerst unsere Verfügbarkeit für deinen Geburtstermin.</p>
+        </header>
+
+        <div class="contact-grid">
+            
+            <!-- WIDGET AGENDA (FILTRO: DE) -->
+            <aside class="availability-card">
+                <div class="card-header">
+                    <h3>🗓️ Verfügbarkeit</h3>
+                    <span>Basierend auf ET (Entbindungstermin)</span>
+                </div>
+                
+                <!-- ATTENZIONE: data-filter="DE" -->
+                <div id="availability-container" class="month-list" data-filter="DE">
+                    <div style="text-align:center; padding:30px; color:#aaa;">Laden...</div>
+                </div>
+            </aside>
+
+
+            <!-- FORM CONTATTI (TEDESCO) -->
+            <main class="contact-form-wrapper">
+                <form action="https://formspree.io/f/myzrobqb" method="POST">
+                    
+                    <div class="form-group">
+                        <label for="name">Vor- und Nachname</label>
+                        <input type="text" name="name" id="name" placeholder="z.B. Anna Müller" required>
+                    </div>
+
+                    <div class="form-group date-highlight">
+                        <label for="due_date">Entbindungstermin (ET) *</label>
+                        <input type="date" name="due_date" id="due_date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Adresse & Stadtteil</label>
+                        <input type="text" name="address" id="address" placeholder="Straße, PLZ, Bezirk" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-Mail Adresse</label>
+                        <input type="email" name="email" id="email" placeholder="anna@beispiel.de" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Wie können wir helfen?</label>
+                        <textarea name="message" id="message" rows="5" placeholder="Deine Nachricht..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Anfrage senden</button>
+                    
+                    <p style="text-align:center; margin-top:20px; font-size:0.8rem; color:#a0aec0;">
+                        Mit dem Absenden akzeptierst du unsere Datenschutzerklärung.
+                    </p>
+
+                </form>
+            </main>
+
+        </div>
+    </div>
+
+    <script>
+
+    // Funzione principale che carica i dati
+    function loadAvailability() {
+        const container = document.getElementById('availability-container');
+        
+        // URL del tuo foglio Google (CSV pubblico)
+        // Assicurati che sia quello giusto!
+        const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSu6nL6CowIQl5q4V2xcgRI1OPsbPDRxFrXNh6NBhsl5_ab04VdC39zVSeJF64WR_8miASaZXxAsSYR/pub?output=csv"; 
+
+        Papa.parse(sheetUrl, {
+            download: true,
+            header: true, // Usa la prima riga come intestazione
+            skipEmptyLines: true, // Salta righe vuote
+            complete: function(results) {
+                const rows = results.data;
+                container.innerHTML = ''; // Pulisce il contenitore
+
+                // INIZIO CICLO
+                rows.forEach((row) => {
+                    
+                    const mese = row['Mese'];
+                    if (!mese) return; // Se manca il mese, salta la riga
+
+                    // --- LOGICA MANUALE ---
+
+                    // 1. Capiamo che lingua è il sito (IT, DE o EN)
+                    let linguaSito = document.documentElement.lang.substring(0, 2).toLowerCase() || 'en';
+
+                    // 2. Scegliamo la colonna giusta dal foglio Excel
+                    let testoFinale = "";
+                    if (linguaSito === 'it') {
+                        testoFinale = row['Testo IT'];
+                    } else if (linguaSito === 'de') {
+                        testoFinale = row['Testo DE'];
+                    } else {
+                        testoFinale = row['Testo EN']; // Default Inglese
+                    }
+
+                    // Se per caso la casella è vuota, mettiamo un trattino
+                    if (!testoFinale) testoFinale = "-";
+
+                    // 3. Leggiamo il colore deciso nel foglio (Verde/Giallo/Rosso)
+            let coloreExcel = row['Colore'] ? row['Colore'].toLowerCase().trim() : "verde";
+            let coloreCSS = "verde"; // Default in ITALIANO
+
+            if (coloreExcel.includes("rosso") || coloreExcel === "red") {
+                coloreCSS = "rosso"; // <-- CORRETTO
+            } else if (coloreExcel.includes("giallo") || coloreExcel === "yellow") {
+                coloreCSS = "giallo"; // <-- CORRETTO
+            } else {
+                coloreCSS = "verde"; // <-- CORRETTO
+            }
+
+                    // 4. Recuperiamo Tipologia e Lingua Corso
+                    const tipologia = row['Tipologia'] ? row['Tipologia'] : ""; 
+                    const linguaCorso = row['Lingua'] ? row['Lingua'] : ""; 
+
+                    // 5. Creiamo l'HTML
+                    const div = document.createElement('div');
+                    div.className = 'availability-item';
+                    
+                    div.innerHTML = `
+                        <div style="display:flex; flex-direction:column; justify-content:center;">
+                            <!-- DATA -->
+                            <span style="font-size:1rem; font-weight:bold; color:#333;">${mese}</span>
+                            
+                            <!-- SOTTOTITOLO -->
+                            <div style="font-size:0.75rem; color:#666; margin-top:2px; text-transform:uppercase; letter-spacing:0.5px;">
+                                ${tipologia} ${linguaCorso ? '• ' + linguaCorso : ''}
+                            </div>
+                        </div>
+
+                        <!-- BADGE -->
+                        <span class="badge ${coloreCSS}">
+                            ${testoFinale}
+                            <span class="dot"></span>
+                        </span>
+                    `;
+
+                    // Inseriamo nel contenitore
+                    container.appendChild(div);
+
+                }); 
+                // FINE CICLO
+
+            },
+            error: function(err) {
+                console.error("Errore PapaParse:", err);
+                container.innerHTML = '<div style="padding:20px; color:red">Errore caricamento dati</div>';
+            }
+        });
+    }
+
+    // ACCENSIONE (Fuori dalla funzione!)
+    loadAvailability();
+
+
+        // Burger Menu
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        if(burger){
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+                burger.classList.toggle('toggle');
+            });
+        }
+    </script>
+
+
+
+</body>
+</html>

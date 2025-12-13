@@ -322,3 +322,178 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 600; }
         margin-left: 0; 
     }
 }
+/* --- 7. STILE SPECIFICO PAGINE CONTATTI --- */
+
+/* Contenitore generale con spaziatura extra */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 80px; /* Spazio sotto per il footer */
+}
+
+/* Intestazione Pagina (simile alla Hero ma più piccola) */
+.page-header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    color: var(--col-text-main);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.page-header p {
+    color: var(--col-text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* GRIGLIA LAYOUT (Agenda + Form) */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr; /* Colonna sinistra fissa, destra flessibile */
+    gap: 60px;
+    align-items: start;
+}
+
+/* --- WIDGET AGENDA (Sinistra) --- */
+.availability-card {
+    background: var(--col-white);
+    border-radius: 20px; /* Arrotondamento coerente */
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0,0,0,0.03);
+    overflow: hidden;
+    position: sticky; /* Resta fissa mentre scorri */
+    top: 100px; /* Distanza dalla navbar */
+}
+
+.card-header {
+    background: var(--col-pink-bg); /* Sfondo rosa chiaro */
+    padding: 25px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.card-header h3 { margin: 0; color: var(--col-text-main); font-size: 1.2rem; }
+.card-header span { font-size: 0.85rem; color: var(--col-text-light); display: block; margin-top: 5px; font-weight: 600; }
+
+.month-list { padding: 10px 0; min-height: 200px; background: white; }
+
+.month-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 25px; 
+    border-bottom: 1px solid #f7f7f7;
+    animation: fadeIn 0.5s ease forwards; opacity: 0;
+}
+.month-item:last-child { border-bottom: none; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Badge Disponibilità */
+.badge {
+    display: inline-flex; align-items: center; padding: 6px 12px;
+    border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+}
+.badge.verde { background-color: #f0fff4; color: #2f855a; border: 1px solid #c6f6d5; } /* Libero */
+.badge.giallo { background-color: #fffff0; color: #975a16; border: 1px solid #fefcbf; } /* Pochi posti */
+.badge.rosso { background-color: #fff5f5; color: #c53030; border: 1px solid #fed7d7; }  /* Pieno */
+.dot { height: 8px; width: 8px; border-radius: 50%; margin-left: 8px; background-color: currentColor; }
+
+
+/* --- FORM CONTATTI (Destra) --- */
+.contact-form-wrapper {
+    background: var(--col-white);
+    padding: 50px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.form-group { margin-bottom: 25px; }
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--col-text-main);
+    letter-spacing: 0.5px;
+}
+
+/* Input Styles */
+input, textarea, select {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--col-text-main);
+    background-color: #fcfcfc;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--col-bronze); /* Focus color Bronzo */
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(212, 163, 115, 0.1);
+}
+
+/* Evidenzia il campo Data Parto */
+.date-highlight input {
+    border-color: var(--col-pink-accent); /* Bordo Rosa */
+    background-color: #fffbf8;
+}
+
+/* Bottone Submit */
+button.btn-submit {
+    background-color: var(--col-bronze);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+    box-shadow: 0 10px 20px rgba(212, 163, 115, 0.3);
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button.btn-submit:hover {
+    background-color: #bfa18f;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(212, 163, 115, 0.4);
+}
+
+/* --- MOBILE RESPONSIVE (Contatti) --- */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Una colonna */
+        gap: 40px;
+    }
+    
+    .availability-card {
+        position: relative; /* Non sticky su mobile */
+        top: 0;
+        order: 1; /* Mette l'agenda PRIMA del form (Utile filtro visivo) */
+        /* Se vuoi l'agenda DOPO il form, cambia order a 2 */
+    }
+    
+    .contact-form-wrapper {
+        order: 2;
+        padding: 30px; /* Meno padding su mobile */
+    }
+    
+    .page-header h1 { font-size: 2.2rem; }
+}
