@@ -1,0 +1,324 @@
+/* --- 1. VARIABILI & RESET --- */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+    /* Palette Colori "Giusy & Gioia" */
+    --col-text-main: #4a4a4a;       /* Grigio Antracite */
+    --col-text-light: #7a7a7a;      /* Grigio Medio */
+    --col-pink-bg: #fdf2f2;         /* Rosa Chiarissimo */
+    --col-pink-accent: #eaddcf;     /* Rosa Cipria/Sabbia */
+    --col-bronze: #d4a373;          /* Bronzo */
+    --col-white: #ffffff;
+    
+    --nav-height: 80px;
+    --radius-card: 16px;
+    --shadow-soft: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--col-text-main);
+    background-color: var(--col-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 600; }
+
+/* --- 2. NAVBAR --- */
+.navbar {
+    height: var(--nav-height);
+    background: rgba(255, 255, 255, 0.98);
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+}
+
+.logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--col-text-main); }
+.logo span { color: var(--col-bronze); }
+
+.nav-links { display: flex; gap: 30px; align-items: center; }
+.nav-links a { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+.nav-links a:hover { color: var(--col-bronze); }
+
+.lang-switch { display: flex; gap: 10px; border-left: 1px solid #ddd; padding-left: 20px; margin-left: 10px; }
+.lang-btn { font-size: 0.85rem; opacity: 0.5; cursor: pointer; font-weight: 700; }
+.lang-btn.active, .lang-btn:hover { opacity: 1; color: var(--col-bronze); }
+
+/* Burger Mobile */
+.burger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.burger div { width: 25px; height: 3px; background-color: var(--col-text-main); transition: 0.3s; }
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed; right: -100%; top: var(--nav-height);
+        height: calc(100vh - var(--nav-height)); background-color: white;
+        flex-direction: column; width: 100%; justify-content: center;
+        transition: 0.4s ease-in-out;
+    }
+    .nav-links.nav-active { right: 0; }
+    .burger { display: flex; }
+    .lang-switch { border: none; padding: 0; margin-top: 20px; }
+    
+    .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+    .toggle .line2 { opacity: 0; }
+    .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+}
+
+/* --- 3. HERO SECTION (Versione Luminosa) --- */
+.hero {
+    height: 85vh;
+    /* Foto Studio Luminoso + Leggera patina bianca per far leggere il testo */
+    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.4)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 0; /* Tolto margine perché ora c'è il Team sotto */
+}
+
+.hero h1 { 
+    font-size: 3.5rem; 
+    margin-bottom: 15px; 
+    line-height: 1.1;
+    color: var(--col-text-main); /* Testo Grigio Scuro (leggibile sul chiaro) */
+    text-shadow: none; /* Niente ombra nera, è più pulito */
+}
+
+.hero p { 
+    font-size: 1.3rem; 
+    margin-bottom: 30px; 
+    font-weight: 600; /* Un po' più grassetto per contrasto */
+    color: var(--col-text-main);
+    opacity: 0.9; 
+}
+
+.hero-btn {
+    padding: 15px 40px; 
+    background-color: var(--col-bronze); 
+    color: white;
+    border-radius: 50px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(212, 163, 115, 0.4);
+    /* Aggiungiamo un bordo bianco sottile per farla staccare dallo sfondo */
+    border: 2px solid white; 
+}
+
+.hero-btn:hover { 
+    background-color: #bfa18f; 
+    transform: translateY(-3px); 
+    border-color: transparent;
+}
+
+/* Adattamento Mobile */
+@media (max-width: 768px) {
+    .hero { height: 70vh; }
+    .hero h1 { font-size: 2.5rem; }
+}
+
+
+/* --- 4. FLOATING CARDS --- */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px; /* Spazio positivo: le spinge giù di 50px */
+    padding: 0 20px;
+    flex-wrap: wrap;
+    background-color: #fdf2f2; /* Opzionale: Diamo un leggero sfondo rosa a tutta la striscia dei servizi? */
+    padding-bottom: 80px; /* Un po' di aria sotto */
+    padding-top: 50px;
+}
+
+.service-card {
+    background: white; padding: 40px 30px; border-radius: var(--radius-card);
+    width: 350px; text-align: center; box-shadow: var(--shadow-soft);
+    border-bottom: 4px solid transparent; transition: 0.3s;
+    position: relative; overflow: hidden;
+}
+.service-card:hover { transform: translateY(-10px); border-bottom-color: var(--col-bronze); }
+
+.card-icon-wrapper {
+    background: var(--col-pink-bg); width: 80px; height: 80px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
+    font-size: 2rem; color: var(--col-bronze);
+}
+
+.service-card h3 { color: var(--col-text-main); margin-bottom: 15px; font-size: 1.4rem; }
+.service-card p { color: var(--col-text-light); font-size: 0.95rem; margin-bottom: 25px; min-height: 60px; }
+
+.pill {
+    display: inline-block; padding: 5px 12px; border-radius: 20px;
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 20px;
+}
+.pill-green { background: #e6f4ea; color: #1e7e34; }
+.pill-orange { background: #fff3e0; color: #e65100; }
+
+.card-link { color: var(--col-bronze); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; border-bottom: 2px solid transparent; }
+.card-link:hover { border-bottom-color: var(--col-bronze); }
+
+/* --- 5. IBRIDO SECTION --- */
+.hybrid-section { padding: 120px 20px 80px; background-color: #faf9f6; text-align: center; }
+.hybrid-steps { display: flex; justify-content: center; gap: 40px; margin-top: 50px; flex-wrap: wrap; }
+.step { max-width: 280px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+.step-num { color: var(--col-bronze); font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; display: block; }
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero { height: 70vh; }
+    .hero h1 { font-size: 2.2rem; }
+    .cards-container { margin-top: -50px; }
+    .service-card { width: 100%; margin-bottom: 10px; }
+}
+/* --- 6. TEAM SECTION --- */
+.team-section {
+    padding: 100px 20px;
+    background-color: white;
+}
+
+.container-team { max-width: 1000px; margin: 0 auto; }
+
+.team-title { text-align: center; font-size: 2.5rem; color: var(--col-text-main); margin-bottom: 10px; }
+.team-subtitle { text-align: center; color: var(--col-text-light); margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+.team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Spazio tra Giusy e Gioia */
+}
+
+/* La Card Orizzontale */
+.team-card {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background: #fff;
+    border-radius: 20px;
+    /* Opzionale: bordo sottile o ombra */
+}
+
+/* Foto Rotonda/Quadrata grande */
+.team-photo {
+    width: 300px; height: 350px;
+    border-radius: 20px;
+    background-size: cover; background-position: center;
+    box-shadow: 10px 10px 0px var(--col-pink-accent); /* Effetto grafico carino */
+    flex-shrink: 0;
+}
+
+.team-info { flex: 1; }
+
+.team-info h3 { font-size: 2rem; margin-bottom: 5px; color: var(--col-text-main); }
+.role { 
+    display: inline-block; 
+    background: var(--col-pink-bg); color: var(--col-bronze); 
+    padding: 5px 15px; border-radius: 50px; 
+    font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.bio { font-size: 1.1rem; color: #555; margin-bottom: 25px; line-height: 1.7; }
+
+/* Lista competenze con icone */
+.skills-list li {
+    margin-bottom: 10px;
+    font-weight: 600; color: var(--col-text-main);
+    display: flex; align-items: center; gap: 10px;
+}
+.skills-list i { color: var(--col-bronze); width: 20px; text-align: center; }
+
+
+/* Variante per GIOIA (Foto a destra) */
+.reverse-layout {
+    flex-direction: row-reverse; /* Inverte l'ordine: Testo - Foto */
+}
+.reverse-layout .team-photo {
+    box-shadow: -10px 10px 0px #d4e0e0; /* Cambia colore ombra per Gioia (es. un grigio/verde o un altro rosa) */
+}
+
+
+/* MOBILE RESPONSIVE TEAM */
+@media (max-width: 768px) {
+    .team-card, .reverse-layout {
+        flex-direction: column; /* Impila foto e testo */
+        text-align: center;
+        gap: 30px;
+        align-items: center; /* Centra tutto */
+    }
+    
+    .team-photo { 
+        width: 100%;           /* Occupa tutta la larghezza disponibile */
+        max-width: 350px;      /* Ma non diventare gigante (max 350px) */
+        height: 350px;         /* Altezza fissa */
+        background-size: cover; /* Copri l'area senza deformare */
+        background-position: top center; /* <--- IMPORTANTE: Ancora la foto in alto! */
+        box-shadow: none;      /* Toglie l'ombra laterale che su mobile sta male */
+        margin: 0 auto;        /* Centra la foto nel div */
+        border-radius: 20px;
+    } 
+    
+    .skills-list li { justify-content: center; }
+}
+/* --- CSS AGGIUNTIVO PER NAVBAR MOBILE --- */
+
+/* 1. Stile base per i controlli mobile (Contenitore Lingua + Burger) */
+.mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spazio tra le lingue e le righette del burger */
+}
+
+/* 2. Nascondi il selettore mobile su Desktop */
+.lang-switch-mobile {
+    display: none; 
+}
+
+/* 3. Stile del selettore mobile (quando apparirà) */
+.lang-switch-mobile a, .lang-switch-mobile span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-left: 8px;
+    color: var(--col-text-main);
+    text-decoration: none;
+    opacity: 0.6;
+}
+.lang-switch-mobile .active {
+    opacity: 1;
+    color: var(--col-bronze);
+    border-bottom: 2px solid var(--col-bronze);
+}
+
+/* --- MEDIA QUERY (QUANDO SIAMO SU MOBILE) --- */
+@media (max-width: 768px) {
+    
+    /* Nascondi il selettore Desktop che era nel menu */
+    .lang-switch.desktop-only {
+        display: none !important;
+    }
+
+    /* Mostra il selettore Mobile accanto al burger */
+    .lang-switch-mobile {
+        display: flex; /* Appare! */
+    }
+    
+    /* Aggiustiamo il burger per allinearlo bene */
+    .burger {
+        margin-left: 0; 
+    }
+}

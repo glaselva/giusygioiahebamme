@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giusy & Gioia - Studio Ostetrico</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+        <nav class="navbar">
+        <div class="logo">Giusy <span>&</span> Gioia</div>
+        
+        <!-- MENU DESKTOP -->
+        <ul class="nav-links">
+            <li><a href="it.html" class="active">Home</a></li>
+            <li><a href="#">Servizi</a></li>
+            <li><a href="#">Corsi</a></li>
+            <li><a href="#">Chi Siamo</a></li>
+            <li><a href="#" style="color:var(--col-bronze)">Contatti</a></li>
+            
+            <!-- Selettore Desktop (IT Attivo) -->
+            <li class="lang-switch desktop-only">
+                <a href="index.html" class="lang-btn">DE</a>
+                <span class="lang-btn active">IT</span>
+                <a href="en.html" class="lang-btn">EN</a>
+            </li>
+        </ul>
+
+        <!-- CONTROLLI MOBILE (Visibili solo su smartphone) -->
+        <div class="mobile-controls">
+            <div class="lang-switch-mobile">
+                <a href="index.html">DE</a>
+                <span class="active">IT</span>
+                <a href="en.html">EN</a>
+            </div>
+            <div class="burger">
+                <div class="line1"></div><div class="line2"></div><div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <!-- Titoli d'impatto -->
+        <h1>Accanto a te,<br>in ogni lingua.</h1>
+        <p>Ostetriche a [Città]. Assistenza a domicilio, in ospedale e online.</p>
+        
+        <!-- CTA Principale -->
+        <a href="#" class="hero-btn">Prenota un colloquio</a>
+    </section>
+
+    <!-- CARD FLUTTUANTI (Il cuore della Home) -->
+
+        <!-- SEZIONE TEAM (Giusy & Gioia) -->
+    <section class="team-section">
+        <div class="container-team">
+            <h2 class="team-title">Chi si prenderà cura di te?</h2>
+            <p class="team-subtitle">Siamo due ostetriche con passioni diverse, unite per offrirti un supporto completo.</p>
+
+            <div class="team-grid">
+                
+                <!-- CARD GIUSY -->
+                <div class="team-card">
+                    <!-- FOTO -->
+                    <div class="team-photo" style="background-image: url('Immagini/joey.jpg');"></div>
+                    
+                    <div class="team-info">
+                        <h3>Giusy</h3>
+                        <span class="role">L'esperta del Post-Parto</span>
+                        
+                        <p class="bio">
+                            Con la sua calma e dolcezza, Giusy ti accompagna nei primi delicati giorni a casa. 
+                            Specializzata in allattamento e cura del neonato.
+                        </p>
+                        
+                        <ul class="skills-list">
+                            <li><i class="fas fa-home"></i> Visite a Domicilio</li>
+                            <li><i class="fas fa-comment"></i> Parla Italiano & Tedesco</li>
+                            <li><i class="fas fa-heart"></i> Supporto Emotivo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CARD GIOIA -->
+                <div class="team-card reverse-layout">
+                    <!-- FOTO -->
+                    <div class="team-photo" style="background-image: url('Immagini/gioia.jpg');"></div>
+                    
+                    <div class="team-info">
+                        <h3>Gioia</h3>
+                        <span class="role">La guida dei Corsi</span>
+                        
+                        <p class="bio">
+                            Energica e strutturata, Gioia ti prepara al parto con corsi informativi e pratici. 
+                            Lavora anche in sala parto per un'esperienza a 360°.
+                        </p>
+                        
+                        <ul class="skills-list">
+                            <li><i class="fas fa-hospital"></i> Corsi & Sala Parto</li>
+                            <li><i class="fas fa-globe"></i> Parla Inglese & Tedesco</li>
+                            <li><i class="fas fa-bolt"></i> Training Fisico</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div style="text-align:center; margin-top:50px;">
+                <a href="#" class="hero-btn" style="background-color:#4a4a4a;">Leggi la nostra storia</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="cards-container">
+        
+            <!-- CARD FLUTTUANTI (Solo 2 Servizi Principali) -->
+    <section class="cards-container">
+        
+        <!-- CARD 1: ASSISTENZA IBRIDA (Ora include tutto) -->
+        <div class="service-card" style="width: 450px;"> <!-- Card più larga per importanza -->
+            <div class="card-icon-wrapper"><i class="fas fa-heart"></i></div> <!-- Icona Cuore/Cura -->
+            
+            <!-- Titolo -->
+            <h3>Assistenza Ibrida & Post-Parto</h3>
+            
+            <p>
+                Visite a domicilio + Video check. 
+                Il supporto completo per gravidanza, allattamento e cura del neonato.
+            </p>
+            
+            <!-- Badge Lingue (Spostati qui da "Casa") -->
+            <div class="pill pill-green">🇮🇹 IT | 🇩🇪 DE | 🇬🇧 EN</div>
+            
+            <!-- Badge Mutuabile -->
+            <div class="pill pill-green" style="background:#e6f4ea; border:1px solid #cce5d6;">
+                <i class="fas fa-check"></i> Mutuabile (Krankenkasse)
+            </div>
+            
+            <br>
+            <a href="#" class="card-link">Scopri i vantaggi</a>
+        </div>
+
+        <!-- CARD 2: CORSI (Gioia) -->
+        <div class="service-card" style="width: 450px;">
+            <div class="card-icon-wrapper"><i class="fas fa-users"></i></div>
+            
+            <h3>Corsi Pre-parto</h3>
+            
+            <p>
+                Preparazione al parto consapevole e attiva. 
+                Scegli tra i nostri gruppi serali o i weekend intensivi.
+            </p>
+            
+            <!-- Badge Lingue -->
+            <div class="pill pill-orange">🇩🇪 Wochentags | 🇬🇧 Weekend</div>
+            
+            <br><br> <!-- Un po' di spazio extra per allineare i bottoni -->
+            <a href="#" class="card-link">Vedi Calendario</a>
+        </div>
+
+    </section>
+
+
+    </section>
+
+    <!-- SEZIONE IBRIDO SPIEGATO -->
+    <section class="hybrid-section">
+        <h2 style="font-size:2.5rem; margin-bottom:10px;">L'Assistenza Ibrida</h2>
+        <p style="color:#7a7a7a;">Il mix perfetto tra calore umano e tecnologia.</p>
+
+        <div class="hybrid-steps">
+            <div class="step">
+                <span class="step-num">01</span>
+                <h4>Visita a Casa</h4>
+                <p style="font-size:0.9rem; color:#666;">Giusy o Gioia vengono da te per i controlli fisici essenziali.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">02</span>
+                <h4>Video Call</h4>
+                <p style="font-size:0.9rem; color:#666;">Dubbi sull'allattamento? Risolviamo subito in videochiamata.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">03</span>
+                <h4>Zero Costi</h4>
+                <p style="font-size:0.9rem; color:#666;">Fatturiamo direttamente alla tua Cassa Malati.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background:#4a4a4a; color:white; padding:40px; text-align:center; margin-top:50px;">
+        <p>&copy; 2025 Giusy & Gioia Hebammenpraxis</p>
+    </footer>
+
+    <!-- SCRIPT BURGER MENU -->
+    <script>
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+    </script>
+
+</body>
+</html>

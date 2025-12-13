@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giusy & Gioia - Hebammenpraxis</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+        <nav class="navbar">
+        <div class="logo">Giusy <span>&</span> Gioia</div>
+        
+        <!-- MENU DESKTOP -->
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Startseite</a></li>
+            <li><a href="#">Leistungen</a></li>
+            <li><a href="#">Kurse</a></li>
+            <li><a href="#">Über Uns</a></li>
+            <li><a href="#" style="color:var(--col-bronze)">Kontakt</a></li>
+            
+            <!-- Selettore Desktop (DE Attivo) -->
+            <li class="lang-switch desktop-only">
+                <span class="lang-btn active">DE</span>
+                <a href="it.html" class="lang-btn">IT</a>
+                <a href="en.html" class="lang-btn">EN</a>
+            </li>
+        </ul>
+
+        <!-- CONTROLLI MOBILE (Visibili solo su smartphone) -->
+        <div class="mobile-controls">
+            <div class="lang-switch-mobile">
+                <span class="active">DE</span>
+                <a href="it.html">IT</a>
+                <a href="en.html">EN</a>
+            </div>
+            <div class="burger">
+                <div class="line1"></div><div class="line2"></div><div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <!-- Titoli in tedesco -->
+        <h1>An deiner Seite,<br>in jeder Sprache.</h1>
+        <p>Deine Hebammen in [Stadt]. Betreuung zu Hause, im Krankenhaus und online.</p>
+        
+        <!-- CTA Principale -->
+        <a href="#" class="hero-btn">Vorgespräch vereinbaren</a>
+    </section>
+
+    <!-- SEZIONE TEAM (Giusy & Gioia) -->
+    <section class="team-section">
+        <div class="container-team">
+            <h2 class="team-title">Wer betreut dich?</h2>
+            <p class="team-subtitle">Zwei Hebammen mit unterschiedlichen Schwerpunkten, vereint für deine Rundum-Betreuung.</p>
+
+            <div class="team-grid">
+                
+                <!-- CARD GIUSY -->
+                <div class="team-card">
+                    <div class="team-photo" style="background-image: url('Immagini/joey.jpg');"></div>
+                    
+                    <div class="team-info">
+                        <h3>Giusy</h3>
+                        <span class="role">Wochenbett-Expertin</span>
+                        
+                        <p class="bio">
+                            Mit Ruhe und Einfühlungsvermögen begleitet Giusy dich in den ersten sensiblen Tagen zu Hause. 
+                            Spezialisiert auf Stillberatung und Neugeborenenpflege.
+                        </p>
+                        
+                        <ul class="skills-list">
+                            <li><i class="fas fa-home"></i> Hausbesuche</li>
+                            <li><i class="fas fa-comment"></i> Spricht Italienisch & Deutsch</li>
+                            <li><i class="fas fa-heart"></i> Emotionale Unterstützung</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CARD GIOIA -->
+                <div class="team-card reverse-layout">
+                    <div class="team-photo" style="background-image: url('Immagini/gioia.jpg');"></div>
+                    
+                    <div class="team-info">
+                        <h3>Gioia</h3>
+                        <span class="role">Kursleitung & Kreißsaal</span>
+                        
+                        <p class="bio">
+                            Energievoll und strukturiert bereitet Gioia dich in ihren Kursen auf die Geburt vor. 
+                            Sie arbeitet auch im Kreißsaal für eine 360°-Erfahrung.
+                        </p>
+                        
+                        <ul class="skills-list">
+                            <li><i class="fas fa-hospital"></i> Geburtsvorbereitung</li>
+                            <li><i class="fas fa-globe"></i> Spricht Englisch & Deutsch</li>
+                            <li><i class="fas fa-bolt"></i> Körperarbeit & Training</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div style="text-align:center; margin-top:50px;">
+                <a href="#" class="hero-btn" style="background-color:#4a4a4a;">Unsere Geschichte lesen</a>
+            </div>
+        </div>
+    </section>
+
+        <!-- CARD FLUTTUANTI (Solo 2 Servizi Principali - DE) -->
+    <section class="cards-container" style="justify-content: center; gap: 50px;">
+        
+        <!-- CARD 1: ASSISTENZA IBRIDA (Include tutto) -->
+        <div class="service-card" style="width: 450px;">
+            <div class="card-icon-wrapper"><i class="fas fa-heart"></i></div>
+            
+            <h3>Hybride Betreuung & Wochenbett</h3>
+            
+            <p>
+                Hausbesuche + Video-Checks. 
+                Die komplette Unterstützung für Schwangerschaft, Stillzeit und Neugeborenenpflege.
+            </p>
+            
+            <!-- Badge Lingue (Uniti) -->
+            <div class="pill pill-green">🇮🇹 IT | 🇩🇪 DE | 🇬🇧 EN</div>
+            
+            <!-- Badge Mutuabile -->
+            <div class="pill pill-green" style="background:#e6f4ea; border:1px solid #cce5d6;">
+                <i class="fas fa-check"></i> Kassenleistung (Voll erstattet)
+            </div>
+            
+            <br>
+            <a href="#" class="card-link">Vorteile entdecken</a>
+        </div>
+
+        <!-- CARD 2: KURSE -->
+        <div class="service-card" style="width: 450px;">
+            <div class="card-icon-wrapper"><i class="fas fa-users"></i></div>
+            
+            <h3>Geburtsvorbereitung</h3>
+            
+            <p>
+                Bewusste und aktive Vorbereitung auf die Geburt. 
+                Wähle zwischen Abendkursen oder Wochenend-Intensivkursen.
+            </p>
+            
+            <!-- Badge Lingue -->
+            <div class="pill pill-orange">🇩🇪 Wochentags | 🇬🇧 Wochenende</div>
+            
+            <br><br>
+            <a href="#" class="card-link">Zum Kursplan</a>
+        </div>
+
+    </section>
+
+
+    <!-- SEZIONE IBRIDO SPIEGATO -->
+    <section class="hybrid-section">
+        <h2 style="font-size:2.5rem; margin-bottom:10px;">Die Hybride Betreuung</h2>
+        <p style="color:#7a7a7a;">Der perfekte Mix aus menschlicher Nähe und Technologie.</p>
+
+        <div class="hybrid-steps">
+            <div class="step">
+                <span class="step-num">01</span>
+                <h4>Hausbesuch</h4>
+                <p style="font-size:0.9rem; color:#666;">Wir kommen für die wichtigen körperlichen Checks persönlich vorbei.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">02</span>
+                <h4>Video Call</h4>
+                <p style="font-size:0.9rem; color:#666;">Fragen zum Stillen? Wir klären das schnell und bequem per Video.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">03</span>
+                <h4>Kassenleistung</h4>
+                <p style="font-size:0.9rem; color:#666;">Wir rechnen direkt mit deiner gesetzlichen Krankenkasse ab.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background:#4a4a4a; color:white; padding:40px; text-align:center; margin-top:50px;">
+        <p>&copy; 2025 Giusy & Gioia Hebammenpraxis</p>
+        <p style="font-size:0.8rem; margin-top:10px; opacity:0.7;">
+            <a href="#">Impressum</a> | <a href="#">Datenschutz</a>
+        </p>
+    </footer>
+
+    <!-- SCRIPT BURGER MENU -->
+    <script>
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+    </script>
+
+</body>
+</html>
