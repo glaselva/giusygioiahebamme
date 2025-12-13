@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - Giusy & Gioia</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="en.html" class="logo">Giusy <span>&</span> Gioia</a>
+    <ul class="nav-links">
+      <li><a href="en.html">Home</a></li>
+      <li><a href="about.html">About us</a></li> <!-- Nuova Pagina -->
+      <li><a href="en.html#services">Services</a></li>
+      <li><a href="courses.html">Courses</a></li> <!-- SOLO questo è colorato -->
+      <li><a href="contact.html"style="color: var(--col-bronze);">Contact</a></li>
+    </ul>
+    <div class="lang-switch">
+      <a href="kurse.html" class="lang-btn">DE</a>
+      <a href="corsi.html" class="lang-btn">IT</a>
+      <a href="courses.html" class="lang-btn active">EN</a>
+    </div>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+
+
+  <!-- HERO CORSI EN -->
+  <header class="hero" style="
+    height: 50vh; 
+    min-height: 400px; 
+    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.4)), url('Immagini/corsi-hero.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;">
+    
+    <h1 style="font-size: 3rem; margin-bottom: 15px; color: var(--col-text-main);">Our Courses</h1>
+    <p style="font-size: 1.3rem; max-width: 600px; color: var(--col-text-main); font-weight: 500;">
+      Best prepared for birth – practical and personalized
+    </p>
+  </header>
+
+
+  <!-- SECTION -->
+  <section class="corsi-section" style="padding: 80px 5%; background-color: var(--col-white);">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+      <div class="corsi-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;">
+
+        <!-- PRENATAL -->
+        <article class="corso-card" data-corso-id="prenatale" style="background: white; border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow-soft);">
+          <div class="corso-image" style="height: 250px;">
+            <img src="Immagini/prenatale.jpg" alt="Prenatal Course" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="corso-content" style="padding: 30px;">
+            <h2 style="color: var(--col-text-main); margin-bottom: 15px; font-size: 1.8rem;">Prenatal Course</h2>
+            <p style="color: var(--col-text-light); margin-bottom: 25px;">Complete journey for expecting parents: from labor to first breastfeeding. Breathing, positions, natural pain relief and much more.</p>
+            <div class="prossime-date">
+              <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--col-bronze);">Upcoming dates</h3>
+              <table class="date-table" style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                <thead>
+                  <tr style="background: var(--col-pink-bg); color: var(--col-text-main);">
+                    <th style="padding: 10px; text-align: left;">Date</th>
+                    <th style="padding: 10px; text-align: left;">Time</th>
+                    <th style="padding: 10px; text-align: left;">Notes</th>
+                  </tr>
+                </thead>
+                <tbody class="dates-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+
+        <!-- PARENTS -->
+        <article class="corso-card" data-corso-id="madre_padre" style="background: white; border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow-soft);">
+          <div class="corso-image" style="height: 250px;">
+            <img src="Immagini/mamma_papa.jpg" alt="Parents Course" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="corso-content" style="padding: 30px;">
+            <h2 style="color: var(--col-text-main); margin-bottom: 15px; font-size: 1.8rem;">Parents Course (Couple)</h2>
+            <p style="color: var(--col-text-light); margin-bottom: 25px;">Strong together! Couples course to share fears, dreams and responsibilities. Communication, task sharing and first care together.</p>
+            <div class="prossime-date">
+              <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--col-bronze);">Upcoming dates</h3>
+              <table class="date-table" style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                <thead>
+                  <tr style="background: var(--col-pink-bg); color: var(--col-text-main);">
+                    <th style="padding: 10px; text-align: left;">Date</th>
+                    <th style="padding: 10px; text-align: left;">Time</th>
+                    <th style="padding: 10px; text-align: left;">Notes</th>
+                  </tr>
+                </thead>
+                <tbody class="dates-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+
+        <!-- POSTNATAL -->
+        <article class="corso-card" data-corso-id="postnatale" style="background: white; border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow-soft);">
+          <div class="corso-image" style="height: 250px;">
+            <img src="Immagini/postnatale.jpg" alt="Postnatal Course" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="corso-content" style="padding: 30px;">
+            <h2 style="color: var(--col-text-main); margin-bottom: 15px; font-size: 1.8rem;">Postnatal Course</h2>
+            <p style="color: var(--col-text-light); margin-bottom: 25px;">Back to life after birth: breastfeeding, sleep, pelvic floor, fitness. Concrete support for the first months with baby.</p>
+            <div class="prossime-date">
+              <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--col-bronze);">Upcoming dates</h3>
+              <table class="date-table" style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                <thead>
+                  <tr style="background: var(--col-pink-bg); color: var(--col-text-main);">
+                    <th style="padding: 10px; text-align: left;">Date</th>
+                    <th style="padding: 10px; text-align: left;">Time</th>
+                    <th style="padding: 10px; text-align: left;">Notes</th>
+                  </tr>
+                </thead>
+                <tbody class="dates-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background-color: var(--col-pink-bg); padding: 40px 20px; text-align: center; margin-top: 50px;">
+    <p style="color: var(--col-text-light); font-size: 0.9rem;">&copy; 2025 Giusy & Gioia. All rights reserved.</p>
+    <p style="margin-top: 10px; font-size: 0.8rem;">
+      <a href="#" style="margin: 0 10px; text-decoration: underline;">Impressum</a>
+      <a href="#" style="margin: 0 10px; text-decoration: underline;">Privacy</a>
+    </p>
+  </footer>
+
+  <!-- SCRIPT -->
+<!-- Libreria PapaParse per leggere CSV in modo affidabile -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+<script>
+    // 1. MENU MOBILE
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    if(burger){
+      burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+        burger.classList.toggle('toggle');
+      });
+    }
+
+    // 2. SCRIPT CON PAPAPARSE
+    function loadCourseDates() {
+      const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSu6nL6CowIQl5q4V2xcgRI1OPsbPDRxFrXNh6NBhsl5_ab04VdC39zVSeJF64WR_8miASaZXxAsSYR/pub?gid=547202508&single=true&output=csv';
+      
+      // PapaParse scarica e converte il CSV automaticamente
+      Papa.parse(sheetUrl, {
+        download: true,
+        header: true, // Usa la prima riga come intestazione (Corso, Data, Ora...)
+        skipEmptyLines: true,
+        complete: function(results) {
+          console.log("Dati scaricati:", results.data); // Debug in console
+
+          const corsoBodies = document.querySelectorAll('.dates-body');
+          corsoBodies.forEach(b => b.innerHTML = ''); // Pulisce
+
+          results.data.forEach(row => {
+            // PapaParse crea un oggetto per ogni riga usando i nomi delle colonne
+            // Es: row.Corso, row.Data, row.Ora
+            
+            if (!row.Corso) return; // Salta righe vuote
+
+            const idCorso = row.Corso.toLowerCase().trim(); // 'prenatale', 'madre_padre'
+            const dataEv = row.Data;
+            const ora = row.Ora;
+            const note = row.Note || '';
+
+            // Cerca la card HTML
+            const targetBody = Array.from(corsoBodies).find(body => 
+               body.closest('.corso-card').dataset.corsoId === idCorso
+            );
+
+            if (targetBody && dataEv) {
+               const tr = document.createElement('tr');
+               tr.innerHTML = `
+                 <td style="padding: 10px; border-bottom: 1px solid #eee;">${dataEv}</td>
+                 <td style="padding: 10px; border-bottom: 1px solid #eee;">${ora}</td>
+                 <td style="padding: 10px; border-bottom: 1px solid #eee;">${note}</td>
+               `;
+               targetBody.appendChild(tr);
+            }
+          });
+        },
+        error: function(err) {
+          console.error("Errore PapaParse:", err);
+          // Se fallisce il download diretto, riprova col Proxy
+          loadWithProxy(); 
+        }
+      });
+    }
+
+    // Fallback con Proxy se il download diretto è bloccato
+    async function loadWithProxy() {
+        console.log("Riprovo con Proxy...");
+        const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSu6nL6CowIQl5q4V2xcgRI1OPsbPDRxFrXNh6NBhsl5_ab04VdC39zVSeJF64WR_8miASaZXxAsSYR/pub?gid=547202508&single=true&output=csv';
+        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(sheetUrl)}`;
+        
+        try {
+            const resp = await fetch(proxyUrl);
+            const json = await resp.json();
+            const csvData = json.contents;
+            
+            // Parsa il testo ricevuto dal proxy
+            Papa.parse(csvData, {
+                header: true,
+                skipEmptyLines: true,
+                complete: function(results) {
+                   // Stessa logica di sopra...
+                   const corsoBodies = document.querySelectorAll('.dates-body');
+                   corsoBodies.forEach(b => b.innerHTML = '');
+                   
+                   results.data.forEach(row => {
+                        if (!row.Corso) return;
+                        const idCorso = row.Corso.toLowerCase().trim();
+                        const targetBody = Array.from(corsoBodies).find(body => 
+                            body.closest('.corso-card').dataset.corsoId === idCorso
+                        );
+                        if (targetBody && row.Data) {
+                            const tr = document.createElement('tr');
+                            tr.innerHTML = `<td style="padding: 10px; border-bottom: 1px solid #eee;">${row.Data}</td><td style="padding: 10px; border-bottom: 1px solid #eee;">${row.Ora}</td><td style="padding: 10px; border-bottom: 1px solid #eee;">${row.Note || ''}</td>`;
+                            targetBody.appendChild(tr);
+                        }
+                   });
+                }
+            });
+        } catch(e) { console.error("Tutto fallito", e); }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadCourseDates);
+</script>
+
+</body>
+</html>
