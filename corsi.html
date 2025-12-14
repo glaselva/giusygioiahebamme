@@ -12,26 +12,38 @@
 <body>
 
   <!-- NAVBAR UGUALE A INDEX.HTML -->
-  <nav class="navbar">
-    <a href="index.html" class="logo">Giusy <span>&</span> Gioia</a>
-    <ul class="nav-links">
-      <li><a href="it.html">Home</a></li>
-      <li><a href="chi-siamo.html">Chi siamo</a></li> <!-- Nuova Pagina -->
-      <li><a href="it.html#servizi">Servizi</a></li>
-      <li><a href="corsi.html">Corsi</a></li> <!-- SOLO questo è colorato -->
-      <li><a href="contatti.html"style="color: var(--col-bronze);">Contatti</a></li>
-    </ul>
-    <div class="lang-switch">
-      <a href="kurse.html" class="lang-btn">DE</a>
-      <a href="corsi.html" class="lang-btn active">IT</a>
-      <a href="courses.html" class="lang-btn">EN</a>
-    </div>
-    <div class="burger">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </div>
-  </nav>
+        <nav class="navbar">
+        <div class="logo">Giusy <span>&</span> Gioia</div>
+        
+        <!-- MENU DESKTOP -->
+        <ul class="nav-links">
+            <li><a href="it.html" class="active">Home</a></li>
+            <li><a href="#">Servizi</a></li>
+            <li><a href="corsi.html">Corsi</a></li>
+            <li><a href="#">Chi Siamo</a></li>
+            <li><a href="contatti.html" style="color:var(--col-bronze)">Contatti</a></li>
+            
+            <!-- Selettore Desktop (IT Attivo) -->
+            <li class="lang-switch desktop-only">
+                <a href="index.html" class="lang-btn">DE</a>
+                <span class="lang-btn active">IT</span>
+                <a href="en.html" class="lang-btn">EN</a>
+            </li>
+        </ul>
+
+        <!-- CONTROLLI MOBILE (Visibili solo su smartphone) -->
+        <div class="mobile-controls">
+            <div class="lang-switch-mobile">
+                <a href="index.html">DE</a>
+                <span class="active">IT</span>
+                <a href="en.html">EN</a>
+            </div>
+            <div class="burger">
+                <div class="line1"></div><div class="line2"></div><div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
 
 
   <!-- HERO CORSI IT -->

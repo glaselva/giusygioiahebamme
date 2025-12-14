@@ -11,27 +11,35 @@
 <body>
 
     <!-- NAVBAR INGLESE -->
-    <nav class="navbar">
+        <nav class="navbar">
         <div class="logo">Giusy <span>&</span> Gioia</div>
+        
+        <!-- MENU DESKTOP -->
         <ul class="nav-links">
-            <li><a href="en.html">Home</a></li>
+            <li><a href="en.html" class="active">Home</a></li>
             <li><a href="#">Services</a></li>
-            <li><a href="#">Courses</a></li>
+            <li><a href="courses.html">Courses</a></li>
             <li><a href="#">About Us</a></li>
-            <li><a href="contact.html" class="active" style="color:var(--col-bronze)">Contact</a></li>
+            <li><a href="contact.html" style="color:var(--col-bronze)">Contact</a></li>
+            
+            <!-- Selettore Desktop (EN Attivo) -->
             <li class="lang-switch desktop-only">
-                <a href="kontakt.html" class="lang-btn">DE</a>
-                <a href="contatti.html" class="lang-btn">IT</a>
+                <a href="index.html" class="lang-btn">DE</a>
+                <a href="it.html" class="lang-btn">IT</a>
                 <span class="lang-btn active">EN</span>
             </li>
         </ul>
+
+        <!-- CONTROLLI MOBILE (Visibili solo su smartphone) -->
         <div class="mobile-controls">
             <div class="lang-switch-mobile">
-                <a href="kontakt.html">DE</a>
-                <a href="contatti.html">IT</a>
+                <a href="index.html">DE</a>
+                <a href="it.html">IT</a>
                 <span class="active">EN</span>
             </div>
-            <div class="burger"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div>
+            <div class="burger">
+                <div class="line1"></div><div class="line2"></div><div class="line3"></div>
+            </div>
         </div>
     </nav>
 

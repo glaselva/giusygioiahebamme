@@ -11,30 +11,37 @@
 <body>
 
     <!-- NAVBAR TEDESCA -->
-    <nav class="navbar">
+        <nav class="navbar">
         <div class="logo">Giusy <span>&</span> Gioia</div>
+        
+        <!-- MENU DESKTOP -->
         <ul class="nav-links">
-            <li><a href="index.html">Startseite</a></li>
+            <li><a href="index.html" class="active">Startseite</a></li>
             <li><a href="#">Leistungen</a></li>
-            <li><a href="#">Kurse</a></li>
+            <li><a href="kurse.html">Kurse</a></li>
             <li><a href="#">Über Uns</a></li>
-            <li><a href="kontakt.html" class="active" style="color:var(--col-bronze)">Kontakt</a></li>
+            <li><a href="kontakt.html" style="color:var(--col-bronze)">Kontakt</a></li>
+            
+            <!-- Selettore Desktop (DE Attivo) -->
             <li class="lang-switch desktop-only">
                 <span class="lang-btn active">DE</span>
-                <a href="contatti.html" class="lang-btn">IT</a>
-                <a href="contact.html" class="lang-btn">EN</a>
+                <a href="it.html" class="lang-btn">IT</a>
+                <a href="en.html" class="lang-btn">EN</a>
             </li>
         </ul>
+
+        <!-- CONTROLLI MOBILE (Visibili solo su smartphone) -->
         <div class="mobile-controls">
             <div class="lang-switch-mobile">
                 <span class="active">DE</span>
-                <a href="contatti.html">IT</a>
-                <a href="contact.html">EN</a>
+                <a href="it.html">IT</a>
+                <a href="en.html">EN</a>
             </div>
-            <div class="burger"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div>
+            <div class="burger">
+                <div class="line1"></div><div class="line2"></div><div class="line3"></div>
+            </div>
         </div>
     </nav>
-
     <!-- CONTENUTO PAGINA -->
     <div class="container" style="padding-top:120px;"> <!-- Padding per non finire sotto la navbar fissa -->
         
