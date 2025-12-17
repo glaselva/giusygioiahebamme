@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giusy & Gioia - Studio Ostetrico</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Icone -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- FONT AWESOME (per le icone servizi) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- BANDIERE (per IT DE EN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
+
+  <!-- TUO CSS -->
+  <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
@@ -48,7 +53,7 @@
     <section class="hero">
         <!-- Titoli d'impatto -->
         <h1>Accanto a te,<br>in ogni lingua.</h1>
-        <p>Ostetriche a [Città]. Assistenza a domicilio, in ospedale e online.</p>
+        <p>Le tue ostetriche a Düsseldorf. Assistenza domiciliare e online.</p>
         
         <!-- CTA Principale -->
         <a href="#" class="hero-btn">Prenota un colloquio</a>
@@ -71,17 +76,15 @@
                     
                     <div class="team-info">
                         <h3>Giusy</h3>
-                        <span class="role">L'esperta del Post-Parto</span>
+                        <span class="role">Responsabile dei corsi</span>
                         
                         <p class="bio">
-                            Con la sua calma e dolcezza, Giusy ti accompagna nei primi delicati giorni a casa. 
-                            Specializzata in allattamento e cura del neonato.
+                            Giusy ti guida al parto con corsi dinamici e ben strutturati.
                         </p>
                         
                         <ul class="skills-list">
-                            <li><i class="fas fa-home"></i> Visite a Domicilio</li>
-                            <li><i class="fas fa-comment"></i> Parla Italiano & Tedesco</li>
-                            <li><i class="fas fa-heart"></i> Supporto Emotivo</li>
+                            <li><i class="fas fa-home"></i> Preparazione alla nascita</li>
+                            <li><i class="fas fa-comment"></i> Corsi in inglese e tedesco</li>
                         </ul>
                     </div>
                 </div>
@@ -93,17 +96,17 @@
                     
                     <div class="team-info">
                         <h3>Gioia</h3>
-                        <span class="role">La guida dei Corsi</span>
+                        <span class="role">Esperta del post parto</span>
                         
                         <p class="bio">
-                            Energica e strutturata, Gioia ti prepara al parto con corsi informativi e pratici. 
-                            Lavora anche in sala parto per un'esperienza a 360°.
+                            Con calma ed empatia, Gioia ti supporterà nei primi, delicati giorni a casa.
+                            Specializzata nel supporto all'allattamento e nell'introduzione di alimenti solidi.
                         </p>
                         
                         <ul class="skills-list">
-                            <li><i class="fas fa-hospital"></i> Corsi & Sala Parto</li>
-                            <li><i class="fas fa-globe"></i> Parla Inglese & Tedesco</li>
-                            <li><i class="fas fa-bolt"></i> Training Fisico</li>
+                            <li><i class="fas fa-hospital"></i> Visite a domicilio</li>
+                            <li><i class="fas fa-comment"></i> Parla Italiano e Tedesco</li>
+                            <li><i class="fas fa-heart"></i> Supporto emotivo</li>
                         </ul>
                     </div>
                 </div>
@@ -130,17 +133,24 @@
             <h3>Assistenza Ibrida & Post-Parto</h3>
             
             <p>
-                Visite a domicilio + Video check. 
-                Il supporto completo per gravidanza, allattamento e cura del neonato.
+                Visite a domicilio e controlli in video-call. Supporto completo per gravidanza, allattamento e svezzamento.
             </p>
             
             <!-- Badge Lingue (Spostati qui da "Casa") -->
-            <div class="pill pill-green">🇮🇹 IT | 🇩🇪 DE | 🇬🇧 EN</div>
+            <div class="pill pill-green">
+                <span class="fi fi-it"></span> IT | 
+                <span class="fi fi-de"></span> DE | 
+                <span class="fi fi-gb"></span> EN
+            </div>
+
             
             <!-- Badge Mutuabile -->
             <div class="pill pill-green" style="background:#e6f4ea; border:1px solid #cce5d6;">
-                <i class="fas fa-check"></i> Mutuabile (Krankenkasse)
+                <i class="fas fa-check"></i> Mutuabile (Krankenkasse) 
+                <span style="margin: 0 5px; opacity: 0.3;">|</span>
             </div>
+
+
             
             <br>
             <a href="#" class="card-link">Scopri i vantaggi</a>
@@ -153,12 +163,16 @@
             <h3>Corsi Pre-parto</h3>
             
             <p>
-                Preparazione al parto consapevole e attiva. 
-                Scegli tra i nostri gruppi serali o i weekend intensivi.
+                Preparazione consapevole e attiva al parto. Scegli 
+                tra corsi serali (in tedesco, con una serata per la persona accompagnatrice) o 
+                corsi intensivi nel fine settimana (in inglese, con la persona accompagnatrice).
             </p>
             
             <!-- Badge Lingue -->
-            <div class="pill pill-orange">🇩🇪 Wochentags | 🇬🇧 Weekend</div>
+            <div class="pill pill-orange">
+                <span class="fi fi-de"></span> In Settimana | <span class="fi fi-gb"></span> Weekend
+            </div>
+
             
             <br><br> <!-- Un po' di spazio extra per allineare i bottoni -->
             <a href="#" class="card-link">Vedi Calendario</a>
@@ -178,17 +192,19 @@
             <div class="step">
                 <span class="step-num">01</span>
                 <h4>Visita a Casa</h4>
-                <p style="font-size:0.9rem; color:#666;">Giusy o Gioia vengono da te per i controlli fisici essenziali.</p>
+                <p style="font-size:0.9rem; color:#666;">Verremo di persona per i controlli fisici importanti, soprattutto nei primi giorni dopo la nascita.</p>
             </div>
             <div class="step">
                 <span class="step-num">02</span>
                 <h4>Video Call</h4>
-                <p style="font-size:0.9rem; color:#666;">Dubbi sull'allattamento? Risolviamo subito in videochiamata.</p>
+                <p style="font-size:0.9rem; color:#666;">Domande sull'allattamento? Rispondiamo in modo rapido e pratico tramite videochiamata.
+                            Grazie alle videochiamate, ti prepariamo al periodo post-partum e all'allattamento anche durante la gravidanza. Dopo le visite iniziali a domicilio, 
+                            passiamo alle videoconsulenze sull'allattamento e sull'introduzione di cibi solidi.</p>
             </div>
             <div class="step">
                 <span class="step-num">03</span>
-                <h4>Zero Costi</h4>
-                <p style="font-size:0.9rem; color:#666;">Fatturiamo direttamente alla tua Cassa Malati.</p>
+                <h4>Rimborsabile</h4>
+                <p style="font-size:0.9rem; color:#666;">Il pagamento viene gestito direttamente con la tua assicurazione sanitaria obbligatoria.</p>
             </div>
         </div>
     </section>
